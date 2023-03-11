@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Главная страница</title>
+{% endblock %}
+
+{% block header %}
+<div class="px-3 py-2 border-bottom"> 
+             <div class="container d-flex flex-wrap justify-content-center"> 
+                 <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"> 
+                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search"> 
+                 </form>
+        </div> 
+    </div> 
+{% endblock %}
+
+{% block content %}
+{{session}}
+<div>
+    {% if offers %}
+        <div class="d-flex-column justify-content-center pt-5">
+        {% for offer in offers %}
+            <div class="card m-auto" style="width: 18rem;"> 
+                
+                <img class="card-img-top" src="
+                 {{ url_for('static', filename='img/offer_img')}}/offer{{offer.id}}.jpg"
+                alt="{{ url_for('static', filename='img/offer_img/default.jpg') }}"> 
+                <div class="card-body"> 
+                    <h5 class="card-title">Card title</h5> 
+                    
+                    <p class="card-text">{{offer.info}}</p> 
+                    <a href="/offer/{{offer.id}}" class="btn btn-primary">Подробнее</a> 
+            </div> 
+        </div>
+          
+        {% endfor %}
+        </div>
+    {% else %}
+        Have no offers
+    {% endif %}
+</div>
+{% endblock %}

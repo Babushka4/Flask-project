@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Registratiin</title>
+{% endblock %}
+
+
+{% block content %}
+    <h1>Registration</h1>
+    
+    <form action="" class="col-md-auto-" method="post"> 
+        
+        <div class="form-group"> 
+            <label for="nameInput">Email</label> 
+            <input type="text" class="form-control" name="nameInput" placeholder="Имя"> 
+            
+            <label for="loginInput">Login</label> 
+            <input type="text" class="form-control" name="loginInput" placeholder="Логин"> 
+        
+            <label for="passInput">Password</label> 
+            <input type="password" class="form-control" name="passInput" placeholder="Пароль"> 
+            
+            <label for="emailInput">Email</label> 
+            <input type="email" class="form-control" name="emailInput" placeholder="Пароль"> 
+        </div> 
+        
+        <div class="form-check"> 
+            <input type="checkbox" class="form-check-input" name="Check1">
+             <label class="form-check-label" for="Check1">Я принимаю условия </label><a href="#" class="info"> политики сервиса</a>
+         </div> 
+         
+         <button type="submit" class="btn btn-primary">Зарегестрироваться</button> 
+         
+     </form>
+{% endblock %}
